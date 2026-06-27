@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Terminal, Package, Zap, Cpu, ArrowRight, GitBranch, Book, CheckCircle, ChevronRight, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { Terminal, Package, Zap, Cpu, ArrowRight, GitBranch, Book, CheckCircle, ChevronRight } from 'lucide-react';
+
 
 /* ── Floating chips in the background ── */
 const floatingCommands = [
@@ -162,7 +162,6 @@ const StatCounter = ({ end, label }) => {
 
 /* ── Main Page ── */
 const LandingPage = () => {
-  const { theme, toggleTheme } = useTheme();
   return (
     <div className="landing-page">
       <FloatingChips />
@@ -175,9 +174,10 @@ const LandingPage = () => {
         <div className="nav-links">
           <Link to="/docs/index" className="nav-item">Documentation</Link>
           <a href="https://github.com/thesixers/pkt" target="_blank" rel="noreferrer" className="nav-item flex-center gap-2"><GitBranch size={16} /> GitHub</a>
-          <button className="theme-toggle" onClick={toggleTheme} title="Toggle theme">
-            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-          </button>
+          {/* Icon-only GitHub — visible on mobile only */}
+          <a href="https://github.com/thesixers/pkt" target="_blank" rel="noreferrer" className="theme-toggle nav-github-icon" title="GitHub">
+            <GitBranch size={18} />
+          </a>
           <Link to="/docs/getting-started" className="btn btn-primary nav-cta">Get Started</Link>
         </div>
       </nav>

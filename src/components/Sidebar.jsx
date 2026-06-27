@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { X, Book, Terminal, Settings, Zap, HardDrive, Package, Cpu, Sun, Moon } from 'lucide-react';
+import { X, Book, Terminal, Settings, Zap, HardDrive, Package, Cpu } from 'lucide-react';
 import { getSortedSlugs, formatTitle } from '../utils/docsRegistry';
-import { useTheme } from '../context/ThemeContext';
 
 // Mapping icons for specific pages
 const iconMap = {
@@ -18,7 +17,6 @@ const iconMap = {
 
 const Sidebar = ({ docs, isOpen, onClose }) => {
   const slugs = getSortedSlugs(Object.keys(docs));
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
@@ -29,9 +27,6 @@ const Sidebar = ({ docs, isOpen, onClose }) => {
             <div className="logo-icon">PKT</div>
           </Link>
           <div className="sidebar-header-actions">
-            <button className="theme-toggle" onClick={toggleTheme} title="Toggle theme">
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-            </button>
             <button className="close-button" onClick={onClose}>
               <X size={20} />
             </button>

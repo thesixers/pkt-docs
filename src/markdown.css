@@ -22,6 +22,7 @@
   color: var(--text-primary);
   font-size: 16px;
   line-height: 1.7;
+  min-width: 0;
 }
 
 .markdown-body h1,
@@ -114,6 +115,7 @@
   margin-bottom: 16px;
   padding: 16px;
   overflow: auto;
+  overflow-x: auto;
   font-size: 85%;
   line-height: 1.45;
   /* Always dark — code blocks are terminal-style in both themes */
@@ -121,6 +123,11 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  /* Prevent overflow on mobile */
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-all;
+  white-space: pre-wrap;
 }
 
 .markdown-body pre code {

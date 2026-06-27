@@ -401,7 +401,7 @@ body {
   
   .main-content {
     min-height: calc(100vh - 80px);
-    padding: 24px;
+    padding: 16px;
   }
 }
 
@@ -474,14 +474,11 @@ body {
   gap: 24px;
 }
 
-.nav-item {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-  transition: color 0.2s;
-}
+.nav-item { color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 15px; transition: color 0.2s; }
 .nav-item:hover { color: var(--text-primary); }
+
+/* Hidden on desktop — only shown on mobile via media query */
+.nav-github-icon { display: none; }
 
 .nav-cta { padding: 10px 20px !important; font-size: 14px !important; border-radius: 24px !important; }
 
@@ -1001,6 +998,8 @@ body {
   .nav-item { display: none; }
   .nav-links { gap: 10px; }
   .nav-cta { padding: 8px 14px !important; font-size: 13px !important; }
+  /* Show icon-only GitHub on mobile */
+  .nav-github-icon { display: flex; }
 }
 
 @media (max-width: 600px) {
@@ -1020,6 +1019,24 @@ body {
   .section-sub { font-size: 16px; }
   .bento-card { padding: 24px; }
   .stat-number { font-size: 40px; }
+
+  /* Doc pagination — stack on mobile */
+  .doc-pagination {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .page-nav-btn {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  .next-btn {
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+  .page-nav-text.align-right {
+    text-align: left;
+  }
 }
 
 
