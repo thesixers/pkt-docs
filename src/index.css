@@ -989,17 +989,37 @@ body {
   .stat-item { padding: 0 20px; }
 }
 
+@media (max-width: 640px) {
+  /* Navbar — collapse to logo + theme toggle + CTA only */
+  .landing-nav {
+    width: calc(100% - 24px);
+    padding: 10px 16px;
+    border-radius: 20px;
+    margin-top: 12px;
+    top: 8px;
+  }
+  .nav-item { display: none; }
+  .nav-links { gap: 10px; }
+  .nav-cta { padding: 8px 14px !important; font-size: 13px !important; }
+}
+
 @media (max-width: 600px) {
   .hero-mega-title { letter-spacing: -2px; }
-  .hero-section { padding: 60px 24px 60px; }
+  .hero-section { padding: 60px 16px 60px; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .hero-ctas .btn { justify-content: center; }
-  .cta-banner { padding: 40px 24px; }
-  .cta-banner h2 { font-size: 28px; }
+  /* Fix typewriter overflow on narrow screens */
+  .typewriter-block { min-width: 0; width: 100%; padding: 16px 20px; font-size: 15px; }
+  .cta-banner { padding: 40px 20px; width: calc(100% - 24px); }
+  .cta-banner h2 { font-size: 26px; }
   .cta-row { flex-direction: column; align-items: stretch; }
-  .install-block { text-align: center; }
+  .install-block { text-align: center; font-size: 13px; overflow-x: auto; }
   .footer-content { flex-direction: column; gap: 24px; align-items: flex-start; }
-  .landing-nav .nav-links { gap: 12px; }
+  .lang-tabs { flex-wrap: wrap; }
+  .lang-tab { padding: 8px 14px; font-size: 14px; }
+  .section-sub { font-size: 16px; }
+  .bento-card { padding: 24px; }
+  .stat-number { font-size: 40px; }
 }
 
 
